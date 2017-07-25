@@ -15,6 +15,7 @@ namespace ClassroomLibrary.Models
         public string Genre { get; set; }
         public Category Category { get; set; }
         public int BookLevel { get; set; }
+        public User AUser { get; set; }
 
        // public int UserID { get; set; }
     }

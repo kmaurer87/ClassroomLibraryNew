@@ -23,8 +23,8 @@ namespace ClassroomLibrary.Data
 
      protected override void OnModelCreating(ModelBuilder modelBuilder)
      {
-            modelBuilder.Entity<User>()
-            .HasKey(c => new { c.ID, c.Username });
+            modelBuilder.Entity<UserLibrary>()
+            .HasKey(c => new { c.ID, c.AUser });
           }
         
 
