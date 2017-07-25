@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ClassroomLibrary.Models.Category>
+
+<ul>
+    <p><a asp-controller="Category" asp-action="Add">Add Category</a></p>
+    @foreach (var category in Model)
+    {
+        <li>@category.Name</li>
+    }
+    <p><a href="@Url.Action("Welcome", "Library")"><span>Home</span></a></p>
+    <p><a href="@Url.Action("Index", "UserLibrary")"><span>See your Library</span></a></p>
+</ul>
+

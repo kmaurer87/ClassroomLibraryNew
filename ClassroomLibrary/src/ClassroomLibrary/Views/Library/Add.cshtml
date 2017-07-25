@@ -1,0 +1,33 @@
+﻿@model ClassroomLibrary.ViewModels.AddUserViewModel
+<h2>Login</h2>
+<form asp-controller="Library" asp-action="Add" method="post">
+
+    <div class="form-group">
+        <label asp-for="FullName"></label>
+        <input class="form-control" asp-for="FullName" />
+        <span asp-validation-for="FullName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input class="form-control" asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Username"></label>
+        <input class="form-control" asp-for="Username" />
+        <span asp-validation-for="Username"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input class="form-control" type="password" asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="VerifyPassword"></label>
+        <input class="form-control" type="password" asp-for="VerifyPassword" />
+        <span asp-validation-for="VerifyPassword"></span>
+    </div>
+
+    <input type="submit" value="Add User" />
+
+</form>
