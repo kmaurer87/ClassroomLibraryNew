@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ClassroomLibrary.ViewModels
 {
-    public class AddUserLibraryViewModel
+    public class AddBookViewModel
     {
 
         [Required(ErrorMessage = "You must select a category")]
@@ -39,13 +39,40 @@ namespace ClassroomLibrary.ViewModels
         [Display(Name = "Genre")]
         public string Genre { get; set; }
 
+        //public string UserName { get; set; }
+
+       // public int UserId { get; set; }
+
 
         //public List<SelectListItem> Authors { get; set; } = new List<SelectListItem>();
-        public List<SelectListItem> Categories { get; set; } = new List<SelectListItem>();
+       // public List<SelectListItem> Categories { get; set; } = new List<SelectListItem>();
         //public List<SelectListItem> Titles { get; set; } = new List<SelectListItem>();
+        //public List<Book> UserLibrary { get; set; } = new List<Book>();
 
-        public AddUserLibraryViewModel() { }
-        public AddUserLibraryViewModel(IEnumerable<Category> categories)
+        private readonly ClassroomLibraryDbContext context;
+        public AddBookViewModel(ClassroomLibraryDbContext dbContext)
+        {
+            context = dbContext;
+        }
+
+        public AddBookViewModel() { }
+
+      //  public AddBookViewModel()
+      //  {
+        //    int thisUserID = context.Users.FirstOrDefault().ID;
+            
+      //  }
+
+   /*  public AddBookViewModel(IEnumerable<User> users)
+        {
+            Users = new List<User>();
+            foreach (var user in users)
+            {
+                user.UserBooks.ToList();
+            }
+        }
+
+       /* public AddBookViewModel(IEnumerable<Category> categories)
         {
 
             Categories = new List<SelectListItem>();
@@ -57,11 +84,14 @@ namespace ClassroomLibrary.ViewModels
                     Text = category.Name
                 });
             }
+        } 
+         */   
+            
 
 
         }
     }
-}
+
     
 
 

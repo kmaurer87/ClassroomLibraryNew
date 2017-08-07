@@ -8,9 +8,10 @@ using ClassroomLibrary.Data;
 namespace ClassroomLibrary.Migrations
 {
     [DbContext(typeof(ClassroomLibraryDbContext))]
-    partial class ClassroomLibraryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170807003338_ABC")]
+    partial class ABC
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")

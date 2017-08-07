@@ -6,12 +6,13 @@ using Microsoft.EntityFrameworkCore;
 using ClassroomLibrary.Models;
 
 
+
 namespace ClassroomLibrary.Data
 {
     public class ClassroomLibraryDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-        public DbSet<UserLibrary> UserLibrary { get; set; }
+        public DbSet<Book> Book { get; set; }
         public DbSet<Category> Categories { get; set; }
 
 
@@ -23,8 +24,12 @@ namespace ClassroomLibrary.Data
 
      protected override void OnModelCreating(ModelBuilder modelBuilder)
      {
-            modelBuilder.Entity<UserLibrary>()
-            .HasKey(c => new { c.ID, c.AUser });
+          //  modelBuilder.Entity<User>()
+         //  .HasMany(c => c.UserBooks).WithOne(i => i.User);
+
+          //  modelBuilder.Entity<Book>()
+          // .HasKey(c => new { c.ID, c.IdOfUser });
+
           }
         
 

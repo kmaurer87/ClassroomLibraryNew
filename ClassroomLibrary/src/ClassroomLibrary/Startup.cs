@@ -74,7 +74,7 @@ namespace ClassroomLibrary
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Library}/{action=Index}/{id?}");
+                    template: "{controller=Login}/{action=Index}/{id?}");
             });
         }
     }

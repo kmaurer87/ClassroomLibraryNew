@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using ClassroomLibrary.Data;
 using System.ComponentModel.DataAnnotations.Schema;
+using ClassroomLibrary.Models;
+
 
 namespace ClassroomLibrary.ViewModels
 {
@@ -18,6 +20,10 @@ namespace ClassroomLibrary.ViewModels
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
+
+       
+
+      
     }
     
  }

@@ -7,16 +7,17 @@ using ClassroomLibrary.ViewModels;
 using ClassroomLibrary.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 
 
 namespace ClassroomLibrary.Controllers
 {
 
-    public class LibraryController : Controller
+    public class LoginController : Controller
     {
         private ClassroomLibraryDbContext context;
 
-        public LibraryController(ClassroomLibraryDbContext dbContext)
+        public LoginController(ClassroomLibraryDbContext dbContext)
         {
             context = dbContext;
         }
@@ -35,18 +36,19 @@ namespace ClassroomLibrary.Controllers
             if (ModelState.IsValid)
             {
 
-                var thisuser = (from userlist in context.Users
-                                where userlist.Username == loginViewModel.UserName && userlist.Password == loginViewModel.Password
+                var thisuser = (from x in context.Users
+                                where x.Username == loginViewModel.UserName && x.Password == loginViewModel.Password
                                 select new
                                 {
-                                    userlist.ID,
-                                    userlist.Username
+                                    x.ID,
+                                    x.Username,
+                                 
                                 }).ToList();
                 if (thisuser.FirstOrDefault() != null)
 
                 {
-
-                    return Redirect("/Library/Welcome");
+                   
+                  return Redirect("/Login/Welcome");
                 }
                 else
                 {
@@ -58,7 +60,11 @@ namespace ClassroomLibrary.Controllers
 
         public IActionResult Welcome()
         {
-            return View();
+
+
+           
+
+           return View();
         }
         public IActionResult Add()
         {
@@ -86,7 +92,7 @@ namespace ClassroomLibrary.Controllers
                 context.Users.Add(newUser);
                 context.SaveChanges();
 
-                return Redirect("/Library");
+                return Redirect("/Login/Index");
             }
 
             return View(addUserViewModel);

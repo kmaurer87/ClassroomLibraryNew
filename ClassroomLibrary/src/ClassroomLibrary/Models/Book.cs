@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ClassroomLibrary.Models
 {
-    public class UserLibrary
+    public class Book
     {
         public int ID { get; set; }
 
@@ -15,8 +15,9 @@ namespace ClassroomLibrary.Models
         public string Genre { get; set; }
         public Category Category { get; set; }
         public int BookLevel { get; set; }
-        public User AUser { get; set; }
+       // public virtual User ThisUser { get; set; }
+        public int IdOfUser{ get; set; }
+        public Book() { }
 
-       // public int UserID { get; set; }
     }
 }

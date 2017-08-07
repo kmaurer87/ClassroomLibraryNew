@@ -11,6 +11,7 @@ namespace ClassroomLibrary.Controllers
 {
     public class CategoryController : Controller
     {
+        
         // GET: /<controller>/
         public IActionResult Index()
         {

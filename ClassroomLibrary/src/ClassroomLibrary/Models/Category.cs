@@ -9,7 +9,7 @@ namespace ClassroomLibrary.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public IList<UserLibrary> UserLibraries { get; set; }
+        public IList<Book> UserLibraries { get; set; }
 
 
 

@@ -1,8 +1,8 @@
-﻿@model ClassroomLibrary.ViewModels.AddUserLibraryViewModel
+﻿@model ClassroomLibrary.ViewModels.AddBookViewModel
 
 <h1>Add Book</h1>
 
-<form asp-controller="UserLibrary" asp-action="Add" method="post">
+<form asp-controller="Book" asp-action="Add" method="post">
 
     <div class="form-group">
         <label asp-for="BookTitle"></label>
@@ -31,10 +31,11 @@
     </div>
     <div class="form-group">
         <label asp-for="CategoryID"></label>
-        <select asp-for="CategoryID" asp-items="Model.Categories"></select>
+       <!--<select asp-for="CategoryID" asp-items="Model.Categories"></select> --> 
     </div>
 
     <input type="submit" value="Add Book" />
+   
 
 </form>
 

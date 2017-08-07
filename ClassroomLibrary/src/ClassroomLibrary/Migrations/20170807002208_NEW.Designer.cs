@@ -8,9 +8,10 @@ using ClassroomLibrary.Data;
 namespace ClassroomLibrary.Migrations
 {
     [DbContext(typeof(ClassroomLibraryDbContext))]
-    partial class ClassroomLibraryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170807002208_NEW")]
+    partial class NEW
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -32,15 +33,15 @@ namespace ClassroomLibrary.Migrations
 
                     b.Property<string>("Genre");
 
-                    b.Property<int?>("ThisUserID");
-
                     b.Property<string>("Title");
+
+                    b.Property<int?>("UserID");
 
                     b.HasKey("ID", "IdOfUser");
 
                     b.HasIndex("CategoryID");
 
-                    b.HasIndex("ThisUserID");
+                    b.HasIndex("UserID");
 
                     b.ToTable("Book");
                 });
@@ -81,9 +82,9 @@ namespace ClassroomLibrary.Migrations
                         .WithMany("UserLibraries")
                         .HasForeignKey("CategoryID");
 
-                    b.HasOne("ClassroomLibrary.Models.User", "ThisUser")
+                    b.HasOne("ClassroomLibrary.Models.User", "User")
                         .WithMany("UserBooks")
-                        .HasForeignKey("ThisUserID");
+                        .HasForeignKey("UserID");
                 });
         }
     }
